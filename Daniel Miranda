@@ -1,0 +1,92 @@
+class Nodo{
+    int valor;
+    Nodo izquierdo, derecha;
+    Public Nodo (int valor) {
+        this.valor = valor;
+        izquierda = derecha = null; 
+    }
+}
+
+Class ArbolBinario {
+    Nodo raiz;
+    public ArbolBinario(){
+        raiz null;
+    }
+    void insertar (int valor) {        
+raiz = insertarDat (raiz, valor);
+    }
+    Nodo insertarDat (Nodo raiz, int valor){
+        if (raiz == null){
+            }
+            if (valor < raiz.valor)
+            raiz.izquierda = insertarDat (raiz.izquierda, valor);
+            else if (valor > raiz.valor)
+            raiz.derecha = insertarDat (raiz.derecha, valor);
+            
+            return raiz;
+        }
+       void preorden(){
+        preordenDat (raiz);
+       }
+       void preordenDat (Nodo raiz){
+        if (raiz != null){
+            System.out.print (raiz.valor +  " " );
+            preordenDat (raiz.izquierda);
+            preordenDat (raiz.derecha);
+        }
+       }
+       void inorden (){
+        if (raiz != null){
+            inorderDat (raiz.izquierda);
+            System.our.print (raiz.valor +  " ");
+        }
+       }
+       void postorden (){
+        postordenDat (raiz);
+
+       }
+       void postordenDat (Nodo raiz){
+        if (raiz != null){
+            postordenDat (raiz.izquierda);
+            postordenDat (raiz.derecha);
+            System.out.print (raiz.valor + " " );
+        }
+       }
+    }
+
+    Public class Main {
+        public static void main (String[] args){
+            ArbolBinario arbol = new ArbolBinario();
+            int [] numeros = {1,2,3,4,5,6,7};
+
+            for (int numeros : numeros){
+                arbol.insertar (numeros);
+
+            }
+        }
+            System.out.print (" Escoja alguna de las opciones para hacer el recorrdio del Arbol Binario: ");
+            System.out.print (" a. Preorden");
+            System.out.print (" b. Inorden ");
+            System.out.print ("c. Postorden ");
+
+            int opcion = Scanner.nextInt ();
+
+            swicht (opcion){
+                case 1:
+                System.out.print (" Recorrido Preorden: ");
+                arbol.preorden();
+                break;
+                case 2:
+                system.out.print (" Recorrido Inorden: ");
+                arbol.inorden();
+                break;
+                case 3:
+                system.out.print (" Recorrido Postordne: ");
+                arbol.postorden();
+                break;
+                
+                default:
+                System.out.print (" Opción invalida: ");
+            }
+        
+    }
